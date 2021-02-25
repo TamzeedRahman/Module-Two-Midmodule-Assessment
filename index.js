@@ -8,20 +8,19 @@ let dice = {
         }
 
     document.addEventListener('DOMContentLoaded', () => {
-        const numberOfDice = document.querySelector('#number-of-dice') //3
-        const rollTheDice = document.querySelector('#roll-the-dice')
-        const diceStory = document.querySelector('#dice-para')
+        let input = Number(document.querySelector('#number-of-dice').value)
+        let rollTheDice = document.querySelector('#roll-the-dice')
+        let diceStory = document.querySelector('#dice-para')
         rollTheDice.addEventListener('click', () => {
             roll()
         })
         function roll(){
            let diceDsply = ''
-            for (let i = 0; i < numberOfDice.value; i++) {
-                console.log(numberOfDice.value)
-                 diceNum = Math.floor(Math.random() * 6) // 1-6
-              let arrKeys = Object.keys('dice')
+            for (let i = 0; i < input; i++) {
+
+                let arrKeys = Object.keys(dice) //[array of dice]
+                 diceDsply = arrKeys[floor(Math.random() * 6)] // 
               
-               diceDsply += arrKeys[diceNum]
                  
             }
             diceStory.textContent = diceDsply

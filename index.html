@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function roll(n) {
+            var dice = ['&#9856', '&#9857', '&#9858', '&#9859', '&#9860', '&#9861'];
+            var results = '';
+            for (var i=0; i<n; i++) {
+                results += dice[Math.floor(Math.random()*6)] + ' ';
+            }
+            return results;
+        }
+        
+        function doRoll(countElem, resultElem) {
+            document.getElementById(resultElem).innerHTML = 
+                roll(parseInt(document.getElementById(countElem).value));
+        }
+        </script>
+        
+        <h1> Dice Roller</h1><br>
+        Number of dice:<input type="number" id="dice-roll-number" /> 
+        <br>
+        <input type="button" onclick="doRoll('dice-roll-number', 'dice-roll-result')" value="Roll the dice!" />
+        <br>
+    <span style="font-size: 64px; line-height: normal" id="dice-roll-result"></span>
+    <p id ="sum-para">Sum = </p>
+</body>
+</html>

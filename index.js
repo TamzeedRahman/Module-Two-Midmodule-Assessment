@@ -1,3 +1,7 @@
+//SMART GOAL
+
+// refactor my code so that the dice appear on the page after a input of a number
+
 let dice = {
     '&#9856':1,
     '&#9857':2, 
@@ -19,7 +23,7 @@ let dice = {
             for (let i = 0; i < input; i++) {
 
                 let arrKeys = Object.keys(dice) //[array of dice]
-                 diceDsply = arrKeys[floor(Math.random() * 6)] // 
+                 diceDsply = arrKeys[Math.floor(Math.random() * 6)] // 
               
                  
             }

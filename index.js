@@ -1,6 +1,6 @@
 //SMART GOAL
 
-// refactor my code so that the dice appear on the page after a input of a number
+// refactor my code so that the dice appear on the page after a input of a number and reformat
 
 let dice = {
     '&#9856':1,
@@ -16,18 +16,16 @@ let dice = {
         let rollTheDice = document.querySelector('#roll-the-dice')
         let diceStory = document.querySelector('#dice-para')
         rollTheDice.addEventListener('click', () => {
-            roll()
-        })
-        function roll(){
-           let diceDsply = ''
+            let diceDsply = ''
             for (let i = 0; i < input; i++) {
 
                 let arrKeys = Object.keys(dice) //[array of dice]
-                 diceDsply = arrKeys[Math.floor(Math.random() * 6)] // 
+                 diceDsply += arrKeys[Math.floor(Math.random() * 6) + 1] // 
               
                  
             }
             diceStory.textContent = diceDsply
-        }
+        })
+      
     })
  

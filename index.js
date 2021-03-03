@@ -2,29 +2,37 @@
 
 // refactor my code so that the dice appear on the page after a input of a number and reformat
 
-let dice = {
-    '&#9856':1,
-    '&#9857':2, 
-    '&#9858':3, 
-    '&#9859':4, 
-    '&#9860':5, 
-    '&#9861':6
+let diceObj = {
+    '⚀':1,
+    '⚁':2, 
+    '⚂':3, 
+    '⚃':4, 
+    '⚄':5, 
+    '⚅':6
         }
 
     document.addEventListener('DOMContentLoaded', () => {
-        let input = Number(document.querySelector('#number-of-dice').value)
-        let rollTheDice = document.querySelector('#roll-the-dice')
+        let input = document.querySelector('#number-of-dice') // 3
+        let rollTheDiceBtn = document.querySelector('#roll-The-Dice-Btn')
         let diceStory = document.querySelector('#dice-para')
-        rollTheDice.addEventListener('click', () => {
+        let diceSum = document.querySelector('#sum-para')
+        rollTheDiceBtn.addEventListener('click', () => {
             let diceDsply = ''
-            for (let i = 0; i < input; i++) {
-
-                let arrKeys = Object.keys(dice) //[array of dice]
-                 diceDsply += arrKeys[Math.floor(Math.random() * 6) + 1] // 
-              
+            let sum = 0
+            for (let i = 1; i <= input.value ; i++) {
+                
+                let arrKeys = Object.keys(diceObj) //['&#9856','&#9857']
+                let arrValue = Object.values(diceObj)
+                randomNum = Math.floor(Math.random() * 6)
+                dice = arrKeys[randomNum] // 
+                diceNum = arrValue[randomNum]
+                diceDsply += dice
+                sum += diceNum
                  
             }
+            
             diceStory.textContent = diceDsply
+            diceSum.textContent = `Sum = ${sum}`
         })
       
     })

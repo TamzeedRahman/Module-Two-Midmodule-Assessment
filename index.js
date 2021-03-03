@@ -33,7 +33,13 @@ let diceObj = {
             
             diceStory.textContent = diceDsply
             diceSum.textContent = `Sum = ${sum}`
+
+
+            const ul = document.querySelector('#lister')
+            const list = document.createElement("li")
+            ul.appendChild(list)
+            list.textContent =  `${diceDsply} sum: ${sum}`
         })
-      
+    
     })
  
